@@ -13,6 +13,7 @@
   --button-hover: #188ce8;
   --networks: #AFB1B8;
   --networks-back: #FFFFFF1A;
+  --portfolio-cords-modal: rgba(33, 150, 243, 0.9);
 }
 /*outline: 2px solid tomato;*/
 
@@ -79,6 +80,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .topline-nav-ul,
 .topline-contakts {
@@ -100,6 +102,7 @@ img {
   letter-spacing: 0.02em;
   display: flex;
   justify-content: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .env {
   display: inline-block;
@@ -115,6 +118,20 @@ img {
 .basement-link:hover,
 .basement-link:focus {
   color: var(--accent-color);
+}
+.nv-l {
+  position: relative;
+}
+.this::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  transform: translateY(32px);
 }
 .hero {
   color: var(--white);
@@ -145,6 +162,7 @@ img {
   line-height: 1.88;
   letter-spacing: 0.06em;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -264,7 +282,8 @@ img {
   height: 44px;
   border-radius: 50%;
   padding: 12px;
-  fill: var(--networks)
+  fill: var(--networks);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .networks:hover,
 .networks:focus {
@@ -306,6 +325,8 @@ img {
   border-radius: 4px;
   padding: 16px 32px;
   display: inline-block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .compani-link:hover,
 .compani-link:focus {
@@ -347,6 +368,7 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adres-ul .adres-li + .adres-li {
   margin-top: 12px;
@@ -375,6 +397,7 @@ address {
 .social-networks-footer .networks {
   fill: var(--white);
   background-color: var(--networks-back);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-networks-footer .networks:hover,
 .social-networks-footer .networks:focus {
@@ -404,6 +427,8 @@ address {
   border: none;
   padding: 6px 22px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -432,8 +457,10 @@ address {
   margin-right: 30px;
   margin-bottom: 30px;
   flex-basis: calc((100% - 90px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-cards-list:hover {
+.portfolio-cards-list:hover,
+.portfolio-cards-list:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-cards-list:nth-last-child(-n + 3) {
@@ -464,4 +491,30 @@ address {
   padding-right: 25px;
   background: var(--white);
   border: 1px solid var(--border-color);
+}
+.cards-rel {
+  position: relative;
+  overflow: hidden;
+}
+.modal-cards {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+  background-color: var(--portfolio-cords-modal);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-cards p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+.portfolio-cards-list:hover .modal-cards {
+  transform: translateY(0);
 }
