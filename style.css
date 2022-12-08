@@ -443,11 +443,10 @@ address {
   text-align: center;
   font-size: 18px;
   padding: 4px 0;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-modal:hover {
-  background-color: var(--accent-color);
-  color: var(--white);
+  color: var(--accent-color);
   cursor: pointer;
 }
 
