@@ -372,21 +372,21 @@
       <div class="basement-content container">
         <div>
           <a href="./index.html" class="logo"><span>Web</span>Studio</a>
-        <address>
-          <p>м. Київ, пр-т Лесі Українки, 26</p>
-          <ul class="off-style adres-ul">
-            <li class="adres-li">
-              <a href="mailto:info@devstudio.com" class="basement-link"
-                >info@devstudio.com</a
-              >
-            </li>
-            <li class="adres-li">
-              <a href="tel:+380961111111" class="basement-link"
-                >+38 096 111 11 11</a
-              >
-            </li>
-          </ul>
-        </address>
+          <address>
+            <p>м. Київ, пр-т Лесі Українки, 26</p>
+            <ul class="off-style adres-ul">
+              <li class="adres-li">
+                <a href="mailto:info@devstudio.com" class="basement-link">
+                  info@devstudio.com
+                </a>
+              </li>
+              <li class="adres-li">
+                <a href="tel:+380961111111" class="basement-link">
+                  +38 096 111 11 11
+                </a>
+              </li>
+            </ul>
+          </address>
         </div>
         <div class="join">
           <h3>ПРИЄДНУЙТЕСЬ</h3>
@@ -421,13 +421,78 @@
             </li>
           </ul>
         </div>
+        <div>
+          <p>Підпишіться на розсилку</p>
+          <input type="email" placeholder="E-mail">
+          <div>
+            <button>Підписатися</button>
+            <div class="send-svg">
+              <svg width="24px" height="24px">
+                <use href="./symbol-defs.svg#icon-send"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <div class="modal">
       <div class="modal-window-content">
         <div class="close-modal">&#10006;</div>
+        <form class="form">
+          <p class="form_text">Залиште свої дані, ми вам передзвонимо</p>
+          <ul class="form_ul off-style">
+            <li class="form_li">
+              <label for="neme_client">Ім'я</label>
+              <input type="text" name="name" id="neme_client" autofocus />
+              <div class="form-svg">
+                <svg width="18px" height="18px">
+                  <use href="./symbol-defs.svg#person"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="form_li">
+              <label for="tel_client">Телефон</label>
+              <input type="tel" name="tel" id="tel_client" />
+              <div class="form-svg">
+                <svg width="18px" height="18px">
+                  <use href="./symbol-defs.svg#phone"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="form_li">
+              <label for="meil_client">Пошта</label>
+              <input type="email" name="meil" id="meil_client" />
+              <div class="form-svg">
+                <svg width="18px" height="18px">
+                  <use href="./symbol-defs.svg#email"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="form_li">
+              <label for="comment">Коментар</label>
+              <textarea name="comment" id="comment" rows="8" class="commet_textarea" placeholder="Введіть текст"></textarea>
+            </li>
+          </ul>
+          <p class="consent">
+            <input type="checkbox" name="consent" value="consent" id="consent" />
+            <label for="consent">Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a></label>
+          </p>
+          <button type="submit" class="submit_button">Відправити</button>
+        </form>
       </div>
     </div>
+    <script>
+      (() => {
+        document
+          .querySelector('.form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+            new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}:${value}`)
+            );
+          });
+      })();
+    </script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
